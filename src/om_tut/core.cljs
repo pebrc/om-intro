@@ -94,3 +94,23 @@
 (om/root contacts-view app-state
   {:target (. js/document (getElementById "contacts"))})
 
+(def app-history (atom [@app-state]))
+
+(add-watch app-state :history (fn [_ _ _ newstate]
+                                (when-not (= newstate (last @app-history))
+                                  (swap! app-history conj newstate))))
+
+(defn undo []
+  (when (> (count @app-history) 1)
+    (swap! app-history pop)
+    (reset! app-state (last @app-history))))
+
+(defn undo-view [history owner]
+  (reify
+    om/IRender
+    (render [this]
+            (dom/div nil
+                     (dom/button #js {:onClick undo} "Undo")
+                     (dom/label nil (str (count history) " states"))))))
+
+(om/root undo-view app-history {:target (.getElementById js/document "history")})
