@@ -57,8 +57,8 @@
                                 <section>
                                   <h2>What? ... Why?</h2>
                                   <p>A new  way of building web
-                                  UIs using Facebook's new React.js library.
-                                  But in ClojureScript with added "functional" benefits.</p>
+                                  UIs using Facebook's new React.js
+                                  library ... but in ClojureScript with added "functional" benefits.</p>
                                 </section>
 
 				<section>
@@ -83,7 +83,7 @@
 				<section>
 					
 					<p>
-                                          It's output can  be optimized with Google's
+                                          Its output can  be optimized with Google's
                 Clo<strong class="fragment highlight-red">s</strong>ure compiler
 						
 					</p>
@@ -95,7 +95,7 @@
 					<p>
 					  Almost. Excluded are the
 					  bits that don't make sense in a
-					  JavaScript enviroment.
+					  JavaScript environment.
 					</p>
 				</section>
 
@@ -103,11 +103,13 @@
 					<h2>Things that won't work:</h2>
 					<ul>
 						<li class="fragment">Concurrency
-						:  STM, Refs, Agents</li>
+						:  Refs, Agents</li>
 						<li class="fragment">Data
 						types:  BigDecimal,
 						BigInteger, Ratio</li>
-						<li class="fragment">Java
+						<li
+                                                    class="fragment">Host
+                                                (Java, CLR)
 						IO related things:
 						*out*</li>
                                                 <li class="fragment"><a href="https://github.com/clojure/clojurescript/wiki/Differences-from-Clojure">Full
@@ -169,8 +171,21 @@
                                   React.js written by David Nolen</p>
                                 </section>
                                 <section>
-                                  <h2>Immutable, persistent data structures</h2>
-                                  <p>Snapshots, Undo, efficient rendering</p>
+                                  <section>
+                                    <h2>Immutable, persistent data structures</h2>
+                                    <p>Snapshots, Undo, efficient rendering</p>  
+                                  </section>
+                                  <section >
+                                    <img src="struct-sharing.svg" />
+                                    <p>
+                                      <small>
+                                      Source <a
+                                    href="http://en.wikipedia.org/wiki/File:Purely_functional_tree_after.svg"
+                                    >http://en.wikipedia.org/wiki/File:Purely_functional_tree_after.svg</a>
+                                      </small>
+                                    </p>
+                                  </section>
+                                  
                                 </section>
                                 <section>
                                   <h2>Typically: Centralized application
